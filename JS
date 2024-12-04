@@ -4,3 +4,8 @@ Browser Object Model (BOM) is a programming interface JavaScript tool for workin
 This enables access & manipulation of the browser window, frames, and other browser-related objects by facilitating the JavaScript code.
  BOM allows websites to show alerts, prompts, and confirmations, making them more interactive.
 It also helps to manage going back or forward in your browsing history using tools like 'history.
+
+# What is setTimeOut and setTimeInterval ?
+ans- 
+setTimeOut :function will call after 1000 milisecond.
+setTimeInterval : fn will again - again after some interval.
