@@ -1,0 +1,17 @@
+Input / output qs :
+.....
+Q1  console.log(typeof typeof 100 ); 
+ string 
+
+Q2 int arr =[...'System oo'];
+print(arr)
+ans = error
+
+Q3 console.log(parseInt ('10+2')); 
+console.log(parseInt ('7FM')); 
+console.log(parseInt ('M7F'));
+
+Ans - 10 7 NAN
+explain as when parseInt () will read the string from L to R it stops at + as can't interpretayed.
+
+
