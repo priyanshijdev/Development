@@ -14,4 +14,12 @@ console.log(parseInt ('M7F'));
 Ans - 10 7 NAN
 explain as when parseInt () will read the string from L to R it stops at + as can't interpretayed.
 
+Q3 
+console.log([1,2,3].map(num=>{
+    if(num>0) return ;
+    return num*2;
+}))
+O/p: Undefined Undefined  Undefined
 
+ as 1 >0 return ; 
+it means it will exit immediately without returning anything. 
