@@ -1,0 +1,28 @@
+Alright, let’s break RTK Query (Redux Toolkit Query) down into simple terms that even a beginner can understand! 🌟
+
+What is RTK Query?
+RTK Query is a tool that comes with Redux Toolkit to help you fetch data from APIs easily and manage it efficiently in your React app.
+
+When you fetch data from APIs, you usually need to:
+
+1 Send an API request.
+2 Handle loading, success, and error states.
+3 Save the data somewhere ( redux / gloal state) so the app can use it.
+4 Refetch data when necessary, like when it gets stale.
+5 RTK Query does all this for you automatically! 🎉
+
+
+                                   How Does RTK Query Work?
+Here’s a simplified process:
+
+1 Define Your API: You tell RTK Query about your API endpoints (e.g., GET /movies, POST /users).
+2 Auto-Generated Hooks: RTK Query creates ready-to-use React hooks (e.g., useGetMoviesQuery) that you can use in your components.
+3 Magic Happens:
+    It fetches data.
+    It caches the data so you don’t fetch it again unnecessarily.
+    It tracks the loading, success, and error states automatically.
+    It updates your UI when the data changes.
+
+
+
+Command - npm install @reduxjs/toolkit react-redux
