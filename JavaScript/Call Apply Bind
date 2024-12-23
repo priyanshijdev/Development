@@ -1,0 +1,21 @@
+const name ={
+    firstName:'Priyanshi',
+    lastName: 'jain',
+    print: function(){
+        console.log('my name is', this.firstName,this.lastName)
+    }
+}
+
+name.print();
+
+let name1 = {
+    firstName:'Piyaaa',
+    lastName: 'jain',
+}
+// fucntion Borrowing
+name.print.call(name1);     
+
+   Output is : Priyanshi JAin 
+Piya jain
+
+----------------------------------------------------------------------------------
