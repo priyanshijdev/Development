@@ -1,0 +1,26 @@
+                                      CURRYING 
+technique , process of taking multiple arg into sequence of functon. and each fn taking single argument.
+
+function add(a, b, c) {
+  return a + b + c;
+}
+
+// Curried version of the add function
+function curriedAdd(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c;
+    }
+  }
+}
+
+// Using the non-curried function
+console.log("Non-curried result:", add(1, 2, 3));
+
+// Using the curried function
+console.log("Curried result:", curriedAdd(1)(2)(3)); >>>>>>>
+
+
+USE CASE :
+1 config and middlewares
+2 memoization & caching 
