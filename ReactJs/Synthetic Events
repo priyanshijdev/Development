@@ -1,0 +1,12 @@
+synthetic events - for cross woker applicaion , react has created a wrapper same 
+same as nativr browser in order to avoid createing implementation.
+
+
+----------------------------------------
+                    Synthetic Events :
+WHY NEED ?
+ans- 
+1. consistency across Browser - Reacts synthetic events ensure that events behave consistently across different browsers,
+eliminating the need to handle browser-specific quirkReact.
+
+2 Performance Optimization:React uses event delegatiin
