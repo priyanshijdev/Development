@@ -1,0 +1,15 @@
+
+                                        Event Loop:
+manges all async operation & ensures non blocking behaviour.
+------------------------------------------------------------------
+
+continously, checks for event queue for task.
+if 'main execution' is empty & event queue has task waited to be executed eventLoop will dequeue task 1 by 1.
+Once Async operation completes, callBack fn is placed in queue - Task Queue.
+
+----------------------------------------------------------
+
+Task --> Micro Task queue 
+    ----> Macro Task queue
+
+Twist : Micro task have higher priority than Macro Task! 
