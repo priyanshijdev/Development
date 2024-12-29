@@ -1,0 +1,21 @@
+                                  High Order Components:
+Higher-order components (HOCs) are a powerful feature of the React library. 
+They allow you to reuse component logic across multiple components.
+
+
+const withAuth = (WrappedComponent) => {
+  return (props) => {
+    const isAuthenticated = /* logic to check authentication */;
+    if (!isAuthenticated) {
+      return <div>Please log in to view this page.</div>;
+    }
+    return <WrappedComponent {...props} />;
+  };
+};
+
+// Usage:
+const Dashboard = (props) => {
+  return <div>Welcome to your Dashboard!</div>;
+};
+
+const ProtectedDashboard = withAuth(Dashboard);
