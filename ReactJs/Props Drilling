@@ -1,0 +1,25 @@
+What is Prop Drilling?
+Prop drilling, also known as "threading props" or "component chaining," refers to the process of passing data 
+from a parent component down to nested child components through props.
+
+Parent -> ChildA -> B -> C
+
+Challenges :
+1Complexity and Boilerplate Code
+
+2. coupled
+Prop drilling can tightly couple components together, making it harder to refactor or restructure the component hierarchy without affecting other parts of the application. 
+This can result in decreased maintainability and flexibility.
+
+How to overcome it?
+Context API: React's Context API allows you to share data across the component tree without explicitly passing props through each level of the hierarchy. 
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+State Management Libraries: Using state management libraries like Redux or MobX can help centralize and manage application state, 
+reducing the need for prop drilling.
+
+Higher-Order Components (HOCs): HOCs are functions that accept a component as input and return a new component with additional props or functionality. 
+They can be used to inject props without directly passing them down through every intermediate component.
+
+Render Props: Render props is a technique for sharing code between React components using a prop whose value is a function.
+This allows components to share code without resorting to prop drilling.
