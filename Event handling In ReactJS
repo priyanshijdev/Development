@@ -1,0 +1,28 @@
+How to Handle Events in React :
+- synthetic events 
+- naming conv 
+- passing event handler 
+- Inline fn 
+
+-----------------------------------------------------------
+
+Event handlers are the functions that run when the event is fired. They're usually defined before the render, just above the return statement. On many occasions, they are also passed as props to components. 
+This aligns with React component-based architecture, allowing event logic to be embedded within the components using them.
+
+How to Pass Arguments to Event Handlers ?
+
+Passing arguments to event handlers in React is a common requirement when you need to perform actions on specific data associated with an event. For example, deleting or editing a resource.
+
+
+Common Event Handling Patterns in React
+Event handling patterns refer to the techniques for handling user interactions within React components.
+
+These patterns include but aren't limited to:
+
+Binding event handlers with useCallback to memoize the handler
+Event handlers with parameters (you've seen this in the section on how to pass arguments to event handlers)
+Conditional event handling
+Event delegation
+Event bubbling
+Optimized handling for lists
+Inline arrow functions (anonymous functions that you pass into event handlers)
