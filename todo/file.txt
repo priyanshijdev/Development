@@ -1,0 +1,4 @@
+we will use mockAPI like JSONPlaceholder 
+// we will use fetch API to get data from the server
+
+>> https://jsonplaceholder.typicode.com
