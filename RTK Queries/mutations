@@ -1,0 +1,3 @@
+while writing injectEndpoints->
+in GET(method) : query, -----> builder.query
+In POST, DELETE, PUT(method): builder.mutation
