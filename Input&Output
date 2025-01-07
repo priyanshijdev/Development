@@ -1,0 +1,32 @@
+setTimeout(()=>{
+  console.log("isha")
+}, 0); 
+
+Promise.resolve("naman").then((value)=>{
+        console.log(value);
+});
+
+// naman isha 
+micro> macros 
+------------------------------------------------------------------------------
+export default function App() {
+  console.log("first");
+
+  useEffect(() => {
+    console.log("second");
+  }, []);
+
+  console.log("third");
+
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+    </div>
+  );
+
+// OP- 1 3 2 as useeffect runs after compoennet is render and only once duw to depenecy array
+}
+
+// >> 1 3 2 
+
