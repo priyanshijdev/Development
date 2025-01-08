@@ -1,0 +1,11 @@
+createRoot-> dom like stryuctyure , comparison 
+repaint-> whole contexnt is preparing again and mean web like strcuture.
+
+
+====
+Reavct Fibre:
+Reavct Fibre:
+Who update the Virtual DOm- REact Fibre,
+key  Feature- Ability to pause , abort, reuse work
+when JS comes into picture that process k/a hydration.
+
