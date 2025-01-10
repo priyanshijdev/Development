@@ -1,0 +1,151 @@
+Server-side rendering uses servers’ request-response process to render the pages using JavaScript. Data fetching is done by the servers and hence it has good user experience. But… why ?
+
+The reason is that in SSR the server first loads the HTML content for the user to atleast have some content on the web page while the JavaScript is being loaded in the background. That is not the case with CSR. CSR always loads a blank page and the markup only gets displayed after the JavaScript has completely loaded. Keep in mind that this is only for the first render i.e. the first time React tree gets rendered from the DOM.
+
+After the DOM has been rendered once it is easier with CSR to keep up with the DOM changes as it much faster and efficient to not make server requests for every DOM change. This difference may not be visible in small applications but the larger the applications get with more number of state changes, the more better it is to use CSR after the complete React tree has been rendered.
+
+What is hydration ?
+Hydration refers to the attaching of React to HTML which was already rendered in a server environment. So we have already rendered our React application on server-side and are hydrating the JavaScript bundle on client-side for smoother user experience and SEO purposes.
+
+Difference between rendering and hydration
+// index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+ReactDOM.render(<App name="Gautam" />, document.getElementById('root'));
+// App.js
+
+import React from "react';
+
+const App = ({props}) => {
+  return(
+     <>
+        <h1> Hello, {props.name}</h1>
+     <>
+)}
+export {App};
+This above code block gives the result as “Hello, Gautam” as the output on localhost.
+
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+ReactDOM.hydrate(<App name="Gautam" />, document.getElementById('root'));
+This will throw an warning saying Expected server HTML to contain a matching <h1> in <div> .
+
+Anyways, this hydrate method was replaced by hydrateRoot() API in the recent React 18 updates. So lets have a look at it whilst we are here.
+
+hydrateRoot() API
+Syntax
+const root = hydrateRoot(domNode, reactNode, ?options)
+The hydrateRoot() API takes three parameters — namely domNode, reactNode and ?options.
+
+domNode — a DOM element that was rendered as the root element in the tree.
+reactNode — the React node used to render the existing HTML. This ususally consists of JSX file like App.js etc.
+options — it is an object with options for the React root. We will not look into it that much for now.
+Things to remember
+hydrateRoot() will compare the rendered content and the server-rendered content and will warn you in case of any mismatches during hydration.
+If the HTML content is not rendered beforehand you can’t use hydrateRoot() .In this case , createRoot() has to be used.
+It is more likely to have only one hydrateRoot() call in your entire React app.
+Returns
+createRoot() returns an object with two methods — render and unmount .
+
+Now let’s have a look at these methods.
+
+root.render(reactNode)
+It is called to update a React component inside the hydrated React DOM tree.
+
+root.render(<App/>);
+// here React will update <App/> component in the hydrated tree
+It has only one parameter i.e. the React node that we want to be hydrated into the React tree.
+
+root.render() returns undefined.
+
+If root.render() is called before the hydration has completed then React will clear the entire server-side rendered HTML and switch the entire root to client-side rendering.
+
+root.unmount()
+It is used to destroy the entire React tree. This method doesn’t have any parameters.
+
+root.unmount();
+An app completely built with React will not have any calls of unmount()
+
+root.unmount() is mostly useful when the root’s DOM node or any of its ancestors gets removed, we can stop removing everything inside that is related to it by calling the unmount method. In simple words, we are telling React to stop with removing the React nodes after we have removed what was necessary , by calling unmount() method.
+
+Normally, calling unmount() will unmount all the node in root and remove React from the root DOM node, including any event handlers and state managers.
+
+Once root.unmount() is called, you cannot call root.render() again as it will throw an error saying Cannot update an unmounted root .
+
+Usage
+Hydrating server-rendered HTML
+import {hydrateRoot} from "react-dom/client";
+
+hydrateRoot(document.getElementById('root'),<App/>);
+The above code will hydrate the JavaScript logic on the React node with id="root" with <App/>. React will attach the logic of the <App/> component using client-side rendering to the already server-side rendered HTML .
+
+//App.js
+import React from "react";
+import { Counter } from "./Counter.js";
+export default function App() {
+  return(
+    <>
+      <h1> Hi there</h1>
+      <Counter/>
+    </>
+)}
+// index.js
+import React from "react";
+import { hydrateRoot } from "react-dom/client";
+import App from ".App.js";
+
+hydrateRoot(
+  document.getElementById('root'),
+  <App/>
+);
+// Counter.js
+import React from "react";
+import {useState} from "react";
+
+export const Counter = () => {
+const [ count, setCount ] = useState(0);
+return(
+  <button onClick={()=> setCount(count+1)}> You clicked the counter {count} times </button>
+)}
+This code will make a counter in which the HTML will be loaded on the server-side while the React logic will load in the client-side.
+
+We are keeping the user in an illusion for some time while we load the JS logic while using hydration to improve user experience. Hence it is important that the React tree rendered on the server-side and the client-side is the same. Otherwise the developer will run into hydration errors.
+
+The most common causes leading to hydration errors include:
+
+- Extra whitespace (like newlines) around the React-generated HTML inside the root node.
+
+- Using checks like typeof window !== 'undefined' in your rendering logic.
+
+- Using browser-only APIs like window.matchMedia in your rendering logic.
+
+- Rendering different data on the server and the client.
+
+Read more about hydrations errors here:
+
+react-hydration-error | Next.js
+While rendering your application, there was a difference between the React tree that was pre-rendered (SSR/SSG) and the…
+nextjs.org
+
+Hydrating an entire document
+Apps made completely from React are capable of rendering the entire document as JSX, and hence the entire document can be hydrated at once.
+
+To hydrate the entire document , pass it as a React node.
+
+import { hydrateRoot} from "react-dom/client";
+import { App } from
+
+hydrateRoot(document, <App/>);
+Suppressing unavoidable hydration mismatch errors
+If a single element’s attribute or text content is unavoidably different between the server and the client (for example, a timestamp), you may silence the hydration mismatch warning.
+
+To silence hydration warnings on an element, add suppressHydrationWarning={true}.
+
+This method is considered as an escape hatch and only works a level deep. Hence it is recommended not to use it too much.
+
+Handling different client and server content
+If you intentionally need to render something different on the server and the client, you can do a two-pass rendering. Components that render something different on the client can read a state variable like isClient, which you can set to true in an Effect.
