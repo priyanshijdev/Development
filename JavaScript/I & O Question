@@ -23,3 +23,32 @@ O/p: Undefined Undefined  Undefined
 
  as 1 >0 return ; 
 it means it will exit immediately without returning anything. 
+
+-------------------------------------------------------------------------------------------------------------
+
+let greet_one = "Hello"
+let greet_two = "World!!!"
+console.log(greet_one)
+setTimeout(function(){
+    console.log("Asynchronous");
+}, 10000)
+console.log(greet_two);
+
+O/p : hello 
+world 
+async
+
+-------------------------------------------------------------------------------------------------------------
+
+function compute(action, x, y){
+    if(action === "add"){
+        return x+y
+    }else if(action === "divide"){
+        return x/y
+    }
+}
+
+console.log(compute("add",10,5))   
+console.log(compute("divide",10,5))
+
+O/p: 15, 2 callbackhell 
