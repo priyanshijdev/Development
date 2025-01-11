@@ -1,0 +1,22 @@
+1. Performance
+CRA:
+
+-> Relies on Webpack for bundling, which can be slower, especially for larger projects.
+-> Development server startup times are longer because Webpack builds the entire app upfront.
+-> Suitable for small to medium-sized apps but can struggle with larger ones.
+
+Vite:
+
+-> Uses ESBuild for dependency pre-bundling, which is extremely fast.
+-> Provides near-instant startup, even for large projects, by using a module-based dev server (native ESM support).
+-> Hot Module Replacement (HMR) is significantly faster, making it ideal for rapid development.
+
+2 Build Speed
+CRA:
+
+Slower build times due to Webpack’s processing.
+Not ideal for CI/CD pipelines where quick builds are essential.
+Vite:
+
+Faster builds due to ESBuild and efficient module graph handling.
+Better suited for modern workflows and pipelines.
