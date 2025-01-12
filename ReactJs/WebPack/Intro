@@ -1,0 +1,17 @@
+ Webpack is a static module bundler.
+
+Webpack is a powerful module bundler for JavaScript applications. 
+It is primarily used to bundle JavaScript files, but it can also bundle other assets like CSS, images, HTML, and even fonts. 
+Webpack is an essential tool in modern web development, especially for complex applications, 
+as it helps optimize the performance of your site by reducing the number of requests and optimizing file sizes.
+
+Key Features of Webpack:
+                                                              Bundling:
+
+Webpack takes multiple JavaScript files (and other assets) and bundles them into one or more optimized files (called bundles) for the browser. 
+This helps reduce the number of HTTP requests needed to load a page.
+
+                                                                Plugins:
+
+Webpack has a wide range of plugins that extend its functionality. 
+Plugins can optimize your build process by minifying files, injecting HTML templates, generating manifest files, and more.
