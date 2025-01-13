@@ -1,0 +1,18 @@
+
+// fucntion callback in js 
+a function is passsed as argument into another fucntion
+
+function greet(name, callback) {                   <<<<<<<<<<<<<<<<<<,, NOTICE this 
+  console.log(`Hello, ${name}!`);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+// Passing sayGoodbye as a callback
+greet("Alice", sayGoodbye);
+
+allbacks were traditionally used for asynchronous operations, but they can lead to callback hell if nested too deeply. 
+To overcome this, Promises and async/await were introduced for better readability and error handling
