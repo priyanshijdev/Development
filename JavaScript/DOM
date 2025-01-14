@@ -1,0 +1,14 @@
+Document Object Model :
+.log(window.document)
+
+OP: #document 
+<!Doctype> : it tells the type like it is documnet type
+
+Window -> documnet ->HTML  
+
+HTML (2 child)
+->Head  - title  -> text node 
+         - meta  ->  attribute
+-> Body  
+
+document.getElementById('heading').innerHTML= 'h1' Chai aur code <h1>'
