@@ -1,0 +1,27 @@
+npm - node pkg manger which used 
+
+NPM is a package management that is used to install, uninstall, and update Javascript packages on your workstation, 
+whereas NPX is a package executer that is used to directly execute Javascript packages without installing them.
+
+npx is also a CLI tool whose purpose is to make it easy to install and manage dependencies hosted in the npm registry.
+Purpose: Used to execute a package without globally installing it.
+Temporary Execution: Downloads and executes a package temporarily, and then deletes it after use.
+
+Which is Better for CRA Deployment?
+Use NPM if:
+
+    The package/tool is part of your development workflow and is used frequently.
+    You want to ensure consistent behavior across environments (other developers or CI/CD systems).
+    Example: Adding a deployment script in package.json:
+    json
+    Copy code
+    "scripts": {
+      "deploy": "firebase deploy"
+    }
+Use NPX if:
+
+    You only need the tool for deployment once or infrequently.
+    You prefer not to install a package globally or in your project dependencies.
+
+
+Conclusion : npm is better 
