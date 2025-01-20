@@ -1,0 +1,65 @@
+MOST COMMON QUESTION ASKED IN INTERVIEW OF REACT:
+
+Q1 What is React.js?
+React.js is an open-source JavaScript library used for building user
+interfaces. It allows developers to create reusable UI components
+and efciently update and render them as the application state
+changes
+-----------------------------------------------------------------------------------------------------------------------------------------
+Q2. What are React features?
+ans-
+Virtual DOM: React uses a virtual representation of the DOM to efciently update and render components.
+Component-based architecture: React follows a modular
+approach, where UIs are built using reusable components.
+Unidirectional data ow: React follows a one-way data binding, making it easier to track and debug data changes.
+JSX: React uses JSX, a syntax extension that allows developers to
+-----------------------------------------------------------------------------------------------------------------------------------------
+Q3.What is state in React?
+State is an object that holds data that can change over time in a React component. 
+It represents the mutable part of the component and can be accessed using this.state. 
+When the state changes, React re-renders the component to reect the updated data. 
+like : something written in useEffect ().
+-----------------------------------------------------------------------------------------------------------------------------------------
+Q4. What is the difference between props and state in React?
+
+Props (short for properties) and state are both used to manage data in React components, but they have some differences:
+Props are read-only and are passed from parent components to child components. They are used to pass data down the component tree.
+         Props: Parent -> Child 
+State is mutable and is managed internally within a component.
+It is used to manage data that can change over time within a component.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Q5. What is the signicance of keys in React lists?
+ Ans- 
+Keys in React lists are essential for helping React efficiently manage and update the DOM when rendering collections of elements.
+##                                                      Improve Performance
+Keys allow React to minimize the number of DOM operations by reusing elements wherever possible.
+Without keys, React resorts to inefficient operations like re-rendering all elements or making incorrect assumptions about changes in the list.
+ EX: items.map(item => <li key={item.id}>{item.name}</li>);
+       
+-----------------------------------------------------------------------------------------------------------------------------------------
+Q6. Explain the concept of the virtual DOM in React.
+The virtual DOM is a lightweight copy of the actual DOM maintained by React. 
+IMP: It is a JavaScript object that mirrors the structure of the real DOM but does not directly manipulate the browser’s DOM.
+It is a representation of the UI components and their structure. 
+When there are changes in the application state, React
+compares the virtual DOM with the real DOM and efciently updates
+only the necessary parts, resulting in better performance.
+
+  -----------------------------------------------------------------------------------------------------------------------------------------
+Q7. How Does the Virtual DOM Work?
+                                                Render the UI:
+When a React component renders, the Virtual DOM creates a tree of React elements that represent the UI.
+                                                State/Props Change:
+When the state or props of a component change, React updates the Virtual DOM instead of directly modifying the real DOM.
+                                                  Reconciliation:
+React compares the updated Virtual DOM with the previous version using a process called diffing.2 V DOM are there . 
+It identifies the differences between the two Virtual DOM trees.
+                                                Update the Real DOM:
+After identifying the changes, React updates only the parts of the real DOM that have changed, rather than re-rendering the entire UI.
+This process is highly optimized and avoids expensive operations like full DOM manipulation
+
+       The main difference : V DOM- JS object     Real DOM- Browser Object
+---------------------------------------------------------------------------------------------------------------------------
+
+Q8. 
+       
