@@ -1,0 +1,71 @@
+Yes, the Real DOM (Document Object Model) is created by the browser as part of the process of rendering a web page. Here's a detailed explanation of how a browser creates the Real DOM:
+
+---
+
+### **1. Receiving and Parsing HTML**
+When a browser receives an HTML document from the server:
+- **HTML Parsing**: The browser starts reading the HTML file line by line from top to bottom. It tokenizes and parses the HTML to construct the **DOM tree**.
+- **DOM Tree Structure**: The DOM tree represents the hierarchical structure of the HTML document, where each HTML element becomes a **node** in the tree.
+
+Example:
+For this HTML snippet:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+```
+The browser creates a DOM tree with:
+- A root node (`<html>`).
+- Child nodes (`<head>` and `<body>`).
+- Nested nodes (`<title>` under `<head>` and `<h1>` under `<body>`).
+
+---
+
+### **2. Tokenization and Tree Construction**
+The browser follows these steps during the DOM creation:
+- **Tokenization**: The browser converts HTML into tokens (e.g., opening tags, attributes, text nodes).
+- **Tree Construction**: Tokens are processed to form a tree structure:
+  - Start tags create new nodes.
+  - End tags close nodes.
+  - Text between tags becomes text nodes.
+
+---
+
+### **3. Handling External Resources**
+- If the HTML contains references to external resources (e.g., CSS, JavaScript, images), the browser requests these files.
+- **CSS Parsing**: The browser builds the CSSOM (CSS Object Model) to apply styles to DOM nodes.
+- **JavaScript Execution**: Scripts are executed, potentially modifying the DOM (e.g., adding or removing nodes).
+
+---
+
+### **4. Integration with Other Browser Objects**
+- **Window and Document Objects**: The `window` object (global browser context) and `document` object (representing the DOM) are created as part of the environment for interacting with the Real DOM.
+- JavaScript code can access and manipulate the DOM through these objects, allowing developers to dynamically modify the page.
+
+---
+
+### **5. Render Tree Construction**
+- The browser combines the DOM and CSSOM to create the **render tree**.
+- The render tree determines what is displayed on the screen (visual representation of the DOM).
+
+---
+
+### **6. Painting and Layout**
+- The render tree is used to calculate layout and paint the elements on the screen.
+- Any subsequent DOM manipulations (e.g., via JavaScript) can cause reflows or repaints.
+
+---
+
+### Summary:
+The Real DOM is created in several steps:
+1. The browser parses the HTML document and builds the DOM tree.
+2. It processes external resources like CSS and JavaScript, integrating them with the DOM.
+3. JavaScript can dynamically modify the DOM.
+4. The DOM is used to create the render tree, which is then painted on the screen.
+
