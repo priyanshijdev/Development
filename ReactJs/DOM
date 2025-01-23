@@ -1,0 +1,12 @@
+ How Does DOM Rednering Happens in Browser?
+
+DOM is a W3C (World Wide Web Consortium) standard. It is a platform and language independent interface standard that allows programs and 
+scripts to dynamically access and update the content, structure, and style of a document.
+
+When a web page loads, the browser builds the page’s DOM tree. In this way, we can change all HTML properties on the page, 
+remove existing HTML elements and attributes, add new HTML elements and attributes, or change all CSS styles on the page with scripting languages ​​such as JS.
+
+What is the DOM Tree?
+A DOM tree is a type of tree whose nodes represent the content of the HTML and XML document. 
+Every HTML or XML document has a unique DOM tree representation. For example, let’s examine the following code:
+
