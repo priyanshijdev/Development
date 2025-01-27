@@ -1,0 +1,18 @@
+                                                  why CRA uses webpack ? 
+
+1. Bundling Resources
+Webpack bundles JavaScript, CSS, images, and other assets into optimized files that browsers can load efficiently. This reduces the number of network requests and improves app performance.
+
+2. Code Splitting
+CRA leverages Webpack for code splitting, which helps break down your app into smaller chunks. This allows browsers to load only the required parts of the application initially, improving load times.
+
+4. Asset Management
+Webpack helps manage assets (images, fonts, etc.) by processing them through loaders and emitting optimized versions.
+
+5. Transpilation via Babel
+
+CRA uses Babel in conjunction with Webpack to transpile modern JavaScript (ES6+) and JSX into browser-compatible JavaScript.
+
+
+Vite’s faster development builds, modern architecture, and better developer experience make it a more attractive choice than CRA for most projects.
+However, CRA's reliance on Webpack provides better legacy support and compatibility with older tooling, which might still be useful for enterprise projects stuck with older requirements
