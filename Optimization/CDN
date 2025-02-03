@@ -1,0 +1,34 @@
+What is cdn?
+ A CDN, or Content Delivery Network, is a system of distributed servers that delivers web content 
+(like images, stylesheets, scripts and other resources) to users, reliably and efficiently.
+ ---------------------------------------------------------------------
+                                                      How does a CDN work?
+ 
+A CDN’s primary function is to cache and serve both static and dynamic web content to users. It achieves this by using the following:
+
+Origin Server: This is the main server where all content is originally hosted.
+
+Edge Servers: These are servers distributed in different geographical locations to serve web content to users closer to them.
+
+Caching: This is a way of storing content on edge servers to reduce repeated requests to the origin server.
+
+DNS Routing: This is the mechanism that reroutes users to the nearest edge servers based on their location.
+
+This is what happens when a user clicks on a CDN link:
+
+1. rqst hit on main server.
+2. server sends back response also sends copy to nearest server located geographically closet to user.
+3. The edge server caches the copy.
+4. When the user wants to access the resources again, the edge server (not the origin server) sends over the cached copy.
+
+
+Real Life example:
+bank headqauter in NY , but have diff branches. 
+
+
+
+
+
+
+
+
