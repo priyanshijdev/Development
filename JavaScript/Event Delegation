@@ -1,0 +1,30 @@
+Event delegation :
+Instead of attaching an event listener to each child element, we attach it to their common parent and use event.target to check which child element triggered the event. 
+
+Q Why Use Event Delegation?
+
+Performance Optimization – Avoids attaching multiple event listeners to multiple child elements.
+Handles Dynamic Elements – Works for elements added to the DOM later.
+Cleaner Code – Reduces redundant event listeners.
+
+Example: With Event Delegation (Efficient)
+
+document.getElementById("parent").addEventListener("click", function (event) {
+  if (event.target.classList.contains("btn")) {
+    console.log("Button clicked:", event.target.textContent);
+  }
+});
+
+-> One event listener for multiple buttons.
+
+                                  	Use Cases
+1.Click events on dynamically created elements (e.g., adding/removing list items).
+2.Handling menus, dropdowns, or tab navigation efficiently.
+3.Capturing form input events efficiently.
+
+ ## 		                            		Key Points
+1.Events bubble from child to parent (event.target helps identify the clicked element).
+2.Use event.stopPropagation() if you want to prevent further bubbling.
+3.Ideal for handling multiple child elements with similar behavior.
+
+
