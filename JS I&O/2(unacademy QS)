@@ -1,0 +1,30 @@
+// flatten the array :
+let arr= [
+    [1,2],
+    [3,4],
+    [5,6,7,8],
+    [9,10,11,12,13]
+];
+let flattenedArr= [].conacat(...arr)
+console.log('falyyendn', flattenedArr)
+.// works for only 1 level array 
+
+// 1,2 3,4 
+// or u can use inbuilt function flat
+
+console.log(arr.flat(2));
+// custom 
+
+function customFlat(arr, depth){
+
+    let result= [];
+    arr.forEach((i)=>{
+        if(Array.isArray(i)&& depth>0 ){
+            result.push(...customFlat(arr, depth-1));
+        }
+        else{
+            result.push(i);
+        }
+        return result;
+    } )
+}
