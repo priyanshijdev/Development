@@ -1,0 +1,40 @@
+
+import React, { useState, useMemo } from "react";
+
+const MemoExample = () => {
+  const [count, setCount] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Expensive calculation
+  const expensiveValue = useMemo(() => {
+    console.log("Calculating...");
+    return count * 2;
+  }, [count]); // Recomputes only when `count` changes
+
+  const themeStyle = useMemo(() => ({
+    backgroundColor: darkMode ? "black" : "white",
+    color: darkMode ? "white" : "black",
+    padding: "10px",
+    marginTop: "10px",
+  }), [darkMode]); // Prevents unnecessary re-renders
+
+  return (
+    <div>
+      <h2>useMemo Example</h2>
+      <p>Expensive Value: {expensiveValue}</p>
+      <button onClick={() => setCount(count + 1)}>Increase Count</button>
+      <button onClick={() => setDarkMode(!darkMode)}>Toggle Theme</button>
+      <div style={themeStyle}>Theme Box</div>
+    </div>
+  );
+};
+
+export default MemoExample;
+```
+
+### Explanation:
+1. `useMemo` caches:
+   - The `expensiveValue` to prevent re-computation unless `count` changes.
+   - The `themeStyle` object to avoid unnecessary re-renders when toggling the theme.
+2. This improves performance by reducing unnecessary calculations and re-renders.  
+
