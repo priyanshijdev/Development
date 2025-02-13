@@ -1,0 +1,22 @@
+1. How does React's virtual DOM work, and why is it beneficial?
+
+The virtual DOM is an in-memory representation of the real DOM elements. Instead of interacting directly with the real DOM, which can be slow and costly in terms of performance, React creates a virtual representation of the UI components. This virtual representation is a lightweight JavaScript object that mirrors the structure of the real DOM.
+
+1 Initial Rendering 
+2 state and props changes
+3. comparison using diffing algo
+4 reconcilliation process
+5. update real DOM
+
+Step 1 – Initial Rendering: when the app starts, the entire UI is represented as a Virtual DOM. 
+React elements are created and rendered into the virtual structure.
+
+Step 2 – State and Props Changes: as the states and props change in the app,
+React re-renders the affected components in the virtual DOM. These changes do not immediately impact the real DOM.
+
+Step 3 – Comparison Using Diff Algorithm: React then uses a diffing algorithm to compare the current version of the 
+Virtual DOM with the previous version. This process identifies the differences (or "diffs") between the two versions.
+
+Step 4 – Reconciliation Process: based on the differences identified, 
+React determines the most efficient way to update the real DOM. Only the parts of the real DOM that need to be updated are changed, 
+rather than re-rendering the entire UI. This selective updating is quick and performant.
