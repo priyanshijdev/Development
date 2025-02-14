@@ -1,0 +1,15 @@
+A component's lifecycle has three main phases: the Mounting Phase, the Updating Phase, and the Unmounting Phase.
+
+The Mounting Phase begins when a component is first created and inserted into the DOM. 
+The Updating Phase occurs when a component's state or props change. 
+And the Unmounting Phase occurs when a component is removed from the DOM.
+
+Mouitng :
+componentDidMount(): Called after the component is fully rendered and inserted into the DOM, often used for fetching data. 
+
+updating :
+componentDidUpdate(): Called after a component updates, often used to perform side effects after an update. 
+
+Unmounting Phase:
+componentWillUnmount(): Called right before a component is removed from the DOM, used to clean up subscriptions or timers. 
+
