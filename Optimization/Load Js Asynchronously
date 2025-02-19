@@ -1,0 +1,46 @@
+Ep1 Load Js Asynchronously | Network Optimization ||:
+
+when JS is after a BODY tag:
+
+1.HTML parsing: <html> 
+<head> 
+  <title> 
+    <body> then comes 
+      <srcipt src='script.js></scriot>
+</html>
+---------------------------------------------------------------------------------------
+2.
+using async 
+<srcipt async src="Srcipt.js"/>
+
+it doesn't paused HTML parsing as it shouldn't paused.
+
+------------------------------------------------------
+ 3		DEFER  
+
+<srcipt defer src="Srcipt.js"/>
+
+After HTML parsing , the code will be executed ,
+so prefetching the Js like downloading .
+
+In first method we are making network call after the parsing but in 
+defer case we are pre fetching it 
+
+By defer attribute we can pre fetch the JSc code before html parsing , and when parsing phase complted we can run Js code .
+
+-------------------------------------------------------------
+difference b/w asycn and defer :
+1. EXECUTION Part:
+ ASYNC: it's basically blocks the parsing during execution
+ DEFER: it does not block 
+ 
+ Why defer is better than async? 
+
+
+
+
+
+
+
+
+ 
