@@ -3,16 +3,16 @@ How React Handles State Management?
 React provides multiple ways to manage state, depending on the complexity and scope of the application. 
 The main state management techniques include:
 
-Local State (Component-level)
+                                                 Local State (Component-level)
 
 Managed using useState or useReducer.
 Example: Form inputs, UI toggles.
-Global State (Across components)
+                                                Global State (Across components)
 
 Managed using Context API or external state management libraries like Redux/RTK Query.
 Example: User authentication, themes.
-Server State (Data fetched from APIs)
 
+                                                Server State (Data fetched from APIs)
 Managed using RTK Query, React Query, or custom API calls.
 Example: API responses, caching.
 URL State
