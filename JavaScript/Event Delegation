@@ -1,5 +1,6 @@
 Event delegation :
-Instead of attaching an event listener to each child element, we attach it to their common parent and use event.target to check which child element triggered the event. 
+Instead of attaching an event listener to each child element, we attach it to their common parent and use event.
+target to check which child element triggered the event. 
 
 Q Why Use Event Delegation?
 
