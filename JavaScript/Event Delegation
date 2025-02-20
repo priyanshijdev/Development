@@ -2,6 +2,8 @@ Event delegation :
 Instead of attaching an event listener to each child element, we attach it to their common parent and use event.
 target to check which child element triggered the event. 
 
+This approach takes advantage of event bubbling, where an event triggered on a child element propagates up to its parent.
+
 Q Why Use Event Delegation?
 
 Performance Optimization – Avoids attaching multiple event listeners to multiple child elements.
