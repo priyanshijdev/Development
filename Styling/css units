@@ -1,0 +1,5 @@
+em	Parent element's font size	Scalable text and spacing
+rem	Root element's font size	Global typography and consistent scaling
+vw	1% of viewport width	Responsive width-based layouts
+vh	1% of viewport height	Full-screen sections
+
