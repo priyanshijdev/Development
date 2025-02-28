@@ -1,6 +1,9 @@
 1. How does React's virtual DOM work, and why is it beneficial?
 
-The virtual DOM is an in-memory representation of the real DOM elements. Instead of interacting directly with the real DOM, which can be slow and costly in terms of performance, React creates a virtual representation of the UI components. This virtual representation is a lightweight JavaScript object that mirrors the structure of the real DOM.
+The virtual DOM is an in-memory representation of the real DOM elements. Instead of interacting directly with the real DOM, 
+which can be slow and costly in terms of performance, React creates a virtual representation of the UI components. 
+This virtual representation is a lightweight JavaScript object that mirrors the structure of the real DOM.
+
 
 1 Initial Rendering 
 2 state and props changes
