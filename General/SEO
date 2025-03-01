@@ -1,4 +1,6 @@
-SEO (Search Engine Optimization) in React refers to optimizing React applications to improve their visibility and ranking in search engine results. Since React is a JavaScript-based SPA (Single Page Application) framework, it poses some SEO challenges, as search engines may struggle to index dynamically loaded content.  
+SEO (Search Engine Optimization) in React refers to optimizing React applications to improve their visibility and ranking in search engine results. 
+Since React is a JavaScript-based SPA (Single Page Application) framework, it poses some SEO challenges, 
+as search engines may struggle to index dynamically loaded content.  
 
 ### **Challenges of SEO in React:**  
 1. **Client-Side Rendering (CSR):** React apps primarily render content on the client-side, meaning search engines may not always see the full content.  
