@@ -1,0 +1,11 @@
+Pooling -> 
+Short Pooling 
+Long Poolinng 
+
+Short:
+Client intiate rqst to server at regualar intervals of time . 
+Ex: Disney Hotstar - qr code at after 2 3 secs API is calling to backend server to see if there's any update 
+or like user loggid in?
+
+Long Pooling:
+Client stays connected & waits for response from server until new updates available.
