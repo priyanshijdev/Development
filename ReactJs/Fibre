@@ -47,7 +47,6 @@ Instead of processing the entire Virtual DOM tree at once, React **breaks it int
 - **Better support for async rendering and concurrent mode** ⚡  
 - **More efficient updates using priority-based scheduling** 📌  
 
----
 
 ### **Conclusion**
 React Fiber is a **powerful update to React’s core architecture**, making UI updates faster, smoother, and more responsive.
