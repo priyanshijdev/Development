@@ -1,0 +1,15 @@
+Code Splitting:
+
+When we inspect in Network calls > JS -> 
+consider there are :
+
+LOGIN
+1. Home
+2. Contact
+3. FAQs
+4. Details 
+
+when User clicks on LOGIN page then there must be possibility that all other 4 components are calling . But it's increase load time and also 
+makes slow down application for hittin extra API calls.
+
+then by Code Splitting:
