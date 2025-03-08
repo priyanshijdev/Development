@@ -28,6 +28,7 @@ Props are read-only and are passed from parent components to child components. T
 State is mutable and is managed internally within a component.
 It is used to manage data that can change over time within a component.
 -----------------------------------------------------------------------------------------------------------------------------------------
+
 Q5. What is the signicance of keys in React lists?
  Ans- 
 Keys in React lists are essential for helping React efficiently manage and update the DOM when rendering collections of elements.
@@ -60,6 +61,5 @@ This process is highly optimized and avoids expensive operations like full DOM m
 
        The main difference : V DOM- JS object     Real DOM- Browser Object
 ---------------------------------------------------------------------------------------------------------------------------
-
-Q8. 
+Q8. RTK vs Redux ? How it manages middlewares?
        
