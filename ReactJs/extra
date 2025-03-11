@@ -1,0 +1,16 @@
+consy child1= React.createElement('p',{},"I am child1")
+consy child2= React.createElement('p',{},"I am child2")
+
+const div= React.createElement('div', className:'text',[child1, child2])
+
+log(div)
+
+root= ReactDOM.createRoot(document.getElementByID('root')
+root.render(div)
+
+
+o/p"
+<div class="text">
+  <p>I am child1</p>
+  <p>I am child2</p>
+</div>
