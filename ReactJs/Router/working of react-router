@@ -1,0 +1,11 @@
+How does React Router work, and what are the key components of React Router?
+
+Answer:
+React Router is a standard routing library for React that enables navigation between different views or pages within a 
+single-page application (SPA) without requiring a full page reload. It helps manage the URL and renders different components based on the route.
+
+How React Router Works?
+
+React Router uses client-side routing, meaning it updates the UI based on the URL without sending a request to the server.
+It listens for URL changes and renders the corresponding components dynamically.
+It uses the History API (pushState, replaceState) to update the URL without reloading the page.
