@@ -1,5 +1,5 @@
-consy child1= React.createElement('p',{},"I am child1")
-consy child2= React.createElement('p',{},"I am child2")
+const child1= React.createElement('p',{},"I am child1")
+const child2= React.createElement('p',{},"I am child2")
 
 const div= React.createElement('div', className:'text',[child1, child2])
 
