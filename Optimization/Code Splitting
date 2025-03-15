@@ -13,3 +13,22 @@ when User clicks on LOGIN page then there must be possibility that all other 4 c
 makes slow down application for hittin extra API calls.
 
 then by Code Splitting:
+
+                                                                            CODE ::
+import { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const Login = lazy(() => import('./Login'));
+const Dashboard = lazy(() => import('./Dashboard'));
+
+const App = () => (
+  <Router>
+    <Suspense>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/about" element={<Dashboard />} />
+      </Routes>
+    </Suspense>
+  </Router>
+);
+
