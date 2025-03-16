@@ -11,10 +11,8 @@ ANS:
 3.context changes,
 4. hooks changes
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-useMemo():
+                                                                            useMemo():
 Optimises expensive calculation:
-
 useMemo memoizes the result of a computation, so it only recalculates when its dependencies change. This is useful when dealing with expensive calculations.
 
 import { useMemo } from "react";
@@ -63,7 +61,6 @@ const ParentComponent = () => {
 
 => Without useCallback, handleClick is recreated on every render.
 => With useCallback, handleClick remains the same across renders unless dependencies change.
-
 
   
  useMemo → For expensive calculations (filtering, sorting, complex logic).
