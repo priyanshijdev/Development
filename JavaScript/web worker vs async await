@@ -56,3 +56,50 @@ Use Web Workers for:
 ✅ Heavy number crunching (e.g., factorials, complex loops)
 ✅ Image processing
 ✅ Real-time analytics
+
+
+------------------------------------------------------------------
+More about this:
+
+Web Workers **are made by the browser**! They are a feature of the **Web API**, which is provided by modern browsers to enable multi-threading in JavaScript.  
+
+### **🔹 How Web Workers Work in the Browser**
+- JavaScript itself is **single-threaded**.
+- The **browser** provides Web Workers as a way to create separate threads.
+- These threads **run in the background**, separate from the main thread.
+- Communication happens through **message-passing** (no shared memory).
+
+---
+
+### **🔹 What Provides Web Workers?**
+✅ Web Workers are part of the **Web API** (provided by browsers like Chrome, Firefox, Edge, etc.).  
+✅ They are **not part of JavaScript itself** (JavaScript alone doesn’t support multi-threading).  
+✅ Browsers manage Web Worker threads internally.
+
+---
+
+### **🔹 Proof: Web Workers Won’t Work in Node.js**
+Try running this in **Node.js**:
+```js
+const worker = new Worker('worker.js');
+```
+❌ **It will fail!**  
+💡 **Reason:** Web Workers are a **browser feature**, and Node.js doesn’t have a browser environment.
+
+---
+
+### **🔹 How Does the Browser Handle Web Workers?**
+1. The browser creates a **new thread** for the worker.
+2. The worker **executes the script** separately from the main thread.
+3. The main thread and worker **communicate via postMessage()**.
+4. Once done, the worker **returns the result to the main thread**.
+
+🔹 **Example of the browser creating a Web Worker:**
+```js
+const worker = new Worker('worker.js'); // Browser spawns a new thread
+worker.postMessage(100); // Send data to the worker
+worker.onmessage = (event) => console.log("Worker Result:", event.data);
+```
+🎯 **Conclusion:**  
+Yes, **Web Workers are provided by the browser**, making JavaScript capable of true parallel execution. 🚀  
+
