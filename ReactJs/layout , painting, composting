@@ -1,0 +1,27 @@
+In the process of rendering a webpage, the browser follows multiple steps to convert HTML, CSS, and JavaScript into what you see on the screen. 
+The three major steps involved are **Layout, Painting, and Compositing**.
+
+### **1. Layout (Reflow)**
+- **What it does:** Determines the size and position of each element on the page.
+- **When it happens:** When the DOM changes in a way that affects the document flow, such as adding, resizing, or modifying elements.
+- **Example:** Changing the width of a container or adding a new block element.
+- **Performance impact:** Layout recalculations are costly, especially for complex pages.
+
+### **2. Painting**
+- **What it does:** Converts each element's styles (colors, borders, shadows, text, etc.) into actual pixels.
+- **When it happens:** After the layout phase, when styles like `color`, `background`, `border`, or `box-shadow` are changed.
+- **Example:** Changing `background-color` or `text color` of an element.
+- **Performance impact:** Painting large areas of the screen can be expensive.
+
+### **3. Compositing**
+- **What it does:** Combines different layers (like overlapping elements, animations, etc.) and renders them on the screen.
+- **When it happens:** When elements with CSS properties like `transform`, `opacity`, or `z-index` are modified.
+- **Example:** Animating an element using `transform: translateX(100px);` without affecting layout or paint.
+- **Performance impact:** Compositing is usually fast, especially if done on the GPU.
+
+### **Key Takeaways**
+- **Layout** recalculates element positions and sizes.
+- **Painting** applies visual styles (like colors, shadows, borders).
+- **Compositing** assembles different layers and displays them efficiently.
+
+For smooth animations and better performance, avoid triggering **layout** and **painting** unnecessarily. Instead, prefer GPU-friendly operations that only affect **compositing**, such as `transform` and `opacity`. 🚀
