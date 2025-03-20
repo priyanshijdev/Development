@@ -19,4 +19,8 @@ Top 10 Performance Optimization Techniques Every Frontend Developer Should Know.
 𝟵. 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗲 𝗔𝗣𝗜 𝗖𝗮𝗹𝗹𝘀  – Use pagination, infinite scrolling, and GraphQL batching to fetch only necessary data, reducing load times.
 
 𝟭𝟬. 𝗔𝗰𝗰𝗲𝘀𝘀𝗶𝗯𝗶𝗹𝗶𝘁𝘆 & 𝗣𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 𝗔𝘂𝗱𝗶𝘁𝘀 – Regularly run Lighthouse and Web Vitals audits to measure performance, SEO, and accessibility improvements.
+ 
+=> Optimize Web Fonts – Prevent FOIT (Flash of Invisible Text) by using font-display: swap, limiting font variants, and preloading essential fonts.
+
+
 
