@@ -72,6 +72,17 @@ During the capturing phase, the event goes through the ancestor elements down to
 It then reaches the target element, and bubbling begins.
 
 /// 2 2 
+--------------------------------------------------------------------------------------------------------------------------
+
+console.log("5" + 3); // "53" (string) ➡️ `+` concatenates 
+console.log("5" - 3); // 2 (number) ➡️ `-` converts to number
+console.log(typeof NaN); // "number" 
 
 
+console.log([] == false); // true  (Empty array is coerced to `""`, then `0`) 
+console.log({} == false); // false ✅ (Object is not converted) 
+
+console.log([] + []); // "" (empty string) 🤯 
+console.log([] + {}); // "[object Object]" (String conversion) 
+console.log({} + []); // 0 (Wait, what? 🤔 JS fun!)
 
