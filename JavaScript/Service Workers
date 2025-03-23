@@ -1,0 +1,37 @@
+A **Service Worker** is a script that runs in the background of a web application, 
+separate from the main browser thread. It acts as a proxy between the web app, the browser, and the network, enabling features like:
+
+1. **Caching & Offline Support**  
+   - Allows web apps to load even when offline by caching assets and API responses.
+   - Reduces network requests and improves performance.
+
+2. **Push Notifications**  
+   - Listens for push events from a server and delivers notifications even when the web page is closed.
+
+3. **Background Sync**  
+   - Delays network requests until the user has an internet connection, ensuring data is sent reliably.
+
+4. **Intercepting & Modifying Requests**  
+   - Can modify requests and responses, enabling custom caching strategies, request routing, and more.
+
+### How It Works:
+- Runs separately from the main JavaScript thread.
+- Operates as a proxy between the browser and the network.
+- Uses the **Cache API** and **Fetch API** to manage assets and network requests.
+
+### Example: Registering a Service Worker
+```tsx
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(reg => console.log('Service Worker registered', reg))
+    .catch(err => console.error('Service Worker registration failed', err));
+}
+```
+
+### Lifecycle of a Service Worker:
+1. **Installation** – Caches assets.
+2. **Activation** – Cleans up old caches.
+3. **Fetch Event** – Intercepts network requests.
+
+
+https://rajat-m.medium.com/what-are-service-workers-and-how-to-use-them-e993c1f497e6
