@@ -1,0 +1,73 @@
+React Fiber is the reconciliation engine behind React. It was introduced in React 16 to improve how React 
+updates the UI by making it more efficient and performant. 
+Fiber allows React to break rendering work into smaller units and prioritize updates, leading to smoother UI interactions.
+
+----------------------------------------------------------------------------
+
+How React Fiber Improves Performance?
+
+React Fiber optimizes UI updates by breaking rendering into smaller, manageable tasks and prioritizing them based on urgency. 
+This prevents UI from freezing during heavy computations and ensures a smooth user experience.
+
+
+----------------------------------------------------------------------------
+How Fiber Works Internally?
+
+React Fiber divides the rendering process into two phases:
+
+Reconciliation (Render Phase) – React compares the virtual DOM with the previous state and decides what needs updating. 
+This process is interruptible, meaning React can pause and prioritize more urgent tasks.
+
+Commit Phase – Updates are applied to the DOM in a single, synchronized operation to maintain performance.
+
+-----------------------------------------------------------------------------------------------
+How to Leverage React Fiber in Your Projects?
+
+Use Concurrent Mode: Enable it with <React.StrictMode> and ReactDOM.createRoot() in React 18+.
+
+Use Suspense for Data Fetching:
+
+import { Suspense } from "react";
+const LazyComponent = React.lazy(() => import("./MyComponent"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </Suspense>
+  );
+}
+
+-----------------------------------------------------------------------------------------------
+
+How Concurrent Mode Works?
+
+In traditional React, updates are synchronous and blocking—once a render starts, React must complete it before handling other tasks. 
+With Concurrent Mode, React can pause and resume rendering based on priority.
+
+Key Features of Concurrent Mode:
+1️⃣ Interruptible Rendering (Time Slicing)
+React can pause rendering mid-way and resume later.
+
+Ensures that high-priority updates (like user interactions) are not blocked by long-running renders.
+
+2️⃣ Suspense for Data Fetching
+Helps manage loading states gracefully.
+
+React can pause rendering until the required data is ready, avoiding unnecessary re-renders.
+
+3️⃣ Automatic Batching
+Multiple state updates in event handlers are batched to reduce unnecessary renders.
+
+4️⃣ Selective Hydration (For SSR)
+
+In Server-Side Rendering (SSR), React can prioritize rendering important UI elements first.
+
+
+
+
+
+
+
+
+
