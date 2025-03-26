@@ -1,0 +1,21 @@
+Authentication pattern are of 2 types:
+statefull and statless
+
+ Statefull: Which maintains state or data or server side.
+ ex: I went to park my car in parking , guard give me ticket which contain my car no and NUM- 12. 
+i.e it contains full data , state is maintained ,
+
+
+Stateless: which has no state 
+
+    PICTORIAL REPRESENTATION OF STATEFULL:
+
+ CLIENT --->  SERVER 
+ CLIENT will provide username and password in return 
+server will generate UNIQUE ID (SESSION ID), 
+so whenever client reqst to server it will give uid: 003  
+   
+    CLIENT--->AUTH MIDDLEWARE ---> ENDPOINT ROUTE
+                /\
+              Checks for cookie value or uid, 
+              if valid then calls next() else  REJECT  
