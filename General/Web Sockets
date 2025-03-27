@@ -1,0 +1,37 @@
+WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication,
+unlike HTTP which starts from ws:// or wss://. It is a stateful protocol, which means the connection between client and server 
+will stay alive until it gets terminated by either party (client or server). After closing the connection by either of the client or server, 
+the connection is terminated from both ends
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+WebSockets in Express.js and Node.js enable real-time, two-way communication between a website and its server. 
+This allows for features like live chat, instant updates, and interactive experiences.
+
+WebSockets maintain a persistent connection, unlike typical web requests.
+Libraries such as ws and socket.io simplify the integration of WebSockets into Node.js and Express.js applications.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Why use WebSockets?
+
+Here are the reasons why WebSockets are a great choice for certain applications:
+
+1. Real-time updates: See changes instantly, like in a live game or chat. ex; any discord or online chat app
+2.Two-way communication: Both the website and the server can send messages at any time. 
+3.Faster than usual: No waiting for the website to “call” the server every time
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How WebSockets Work in Node.js?
+
+WebSockets provide a persistent, two-way communication channel between a client (like a web browser) and a server (like a Node.js server). 
+This allows for real-time data exchange without the overhead of repeatedly establishing connections, which is how traditional HTTP requests work.
+
+Handshake: The client and server initially establish a WebSocket connection through an HTTP handshake. This “upgrades” the connection to a WebSocket.
+Persistent Connection: Unlike HTTP, the WebSocket connection remains open, allowing for continuous communication.
+
+Bidirectional Communication: Both the client and the server can send data to each other at any time.
+
+Real-time Data Exchange: Data is pushed instantly, without the need for the client to repeatedly request updates.
+
+Event-driven Model: socket.io (a popular WebSocket library) uses an event-driven model to manage communication, 
+making it easy to handle messages and other events.
