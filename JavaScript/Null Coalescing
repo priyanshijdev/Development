@@ -1,0 +1,30 @@
+Null coalescing operator(??) 
+Coalescing, according to the dictionary means "coming together to form one whole
+
+function expression1() {
+  console.log("expression1")
+  return false
+}
+
+function expression2() {
+  console.log("expression2")
+  return "Dillion"
+}
+
+const result = expression1() ?? expression2()
+
+console.log(result)
+// expression1
+// false
+-----------------------------------------------------------------------------------------------------------------------------
+let name = null;
+let defaultName= name ?? "Guest"
+
+print(defaultName);
+
+Output: Guest
+
+
+Use Case:
+1. Optional Configuration
+2. Safe Object Access
