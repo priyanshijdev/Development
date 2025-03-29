@@ -1,0 +1,50 @@
+### **What is Azure Service Bus?**
+Azure Service Bus is a **fully managed message broker** from Microsoft that enables applications and services to communicate asynchronously using messages. 
+It is used to decouple applications, ensuring **scalability, reliability, and fault tolerance** in distributed systems.
+
+---
+
+### **How Does Azure Service Bus Work?**
+Azure Service Bus works by providing **message queues and topics (pub/sub model)** for reliable communication between applications. 
+Here’s a breakdown of how it works:
+
+1. **Message Producers (Senders)**  
+   - Applications or services send messages to an Azure Service Bus entity (Queue or Topic).
+   
+2. **Azure Service Bus (Message Broker)**  
+   - Stores messages reliably until they are processed.  
+   - Supports features like **message ordering, duplicate detection, dead-lettering, and transactions**.  
+   - Can enforce **FIFO (First-In-First-Out)** and **At-Least-Once or At-Most-Once delivery**.
+
+3. **Message Consumers (Receivers/Subscribers)**  
+   - Applications retrieve and process messages from queues or topic subscriptions.  
+   - Can use **pull-based polling** or **push-based event-driven processing**.
+
+---
+
+### **Key Components of Azure Service Bus**
+1. **Queues**  
+   - FIFO (First-In-First-Out) message handling.  
+   - Ensures **one-to-one** communication (one consumer processes each message).
+
+2. **Topics & Subscriptions (Pub/Sub Model)**  
+   - **Topics** allow multiple consumers to receive messages based on subscriptions.  
+   - **Subscriptions** filter messages based on criteria (using SQL-like filters).
+
+3. **Dead-letter Queue (DLQ)**  
+   - Stores undeliverable messages (e.g., expired, unprocessable, or too many delivery attempts).
+
+4. **Sessions**  
+   - Groups related messages to maintain order and state across multiple transactions.
+
+5. **Geo-Replication & Failover**  
+   - Ensures **high availability and disaster recovery**.
+
+---
+
+### **Common Use Cases**
+- **Microservices Communication**: Ensures loosely coupled services.  
+- **Event-Driven Systems**: Supports real-time data processing.  
+- **Order Processing & Workflows**: Manages tasks in a queue for sequential execution.  
+- **IoT & Telemetry Data Processing**: Handles massive event streams.
+
