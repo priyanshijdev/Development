@@ -1,0 +1,42 @@
+How does server-side rendering (SSR) work with React, and what are its benefits? 
+Ans :
+Server-side rendering (SSR) is a technique where React components are rendered on the server instead of the client. 
+The server sends a fully rendered HTML page to the browser, which improves initial load performance and SEO.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How SSR Works in React?
+
+User Request: The browser sends a request to the server.
+
+Server Renders React Components: The server runs React code and generates static HTML.
+
+HTML Sent to Browser: The server sends this pre-rendered HTML to the client.
+
+Hydration: React on the client rehydrates the page by attaching event listeners and making it interactiv
+
+Example of SSR with Next.js
+export async function getServerSideProps() {
+  const res = await fetch("https://api.example.com/data");
+  const data = await res.json();
+
+  return { props: { data } };
+}
+
+const Page = ({ data }) => {
+  return (
+    <div>
+      <h1>Server-Side Rendered Page</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+};
+
+export default Page;
+=>
+
+getServerSideProps() runs on the server for each request.
+
+The server fetches data and renders the HTML.
+
+The page is sent as fully rendered HTML to the client.
+
