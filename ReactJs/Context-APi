@@ -1,0 +1,16 @@
+What is the Context API in React, and how can it be used for state management?
+Answer :
+Prop Drilling :
+Managing state has always been a critical aspect of making web applications with React. 
+The most basic way to do this is prop drilling. In prop drilling, you pass props around from the parent component to other components that need it,
+no matter how deeply nested they are.
+
+The problem with prop drilling is that, as the application grows in complexity, passing data through multiple levels of components can become messy,
+cumbersome, and error-prone.
+like : Parent -> ChildA -> CHildB -> ChildC
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q How Does the Context API Work?
+The Context API provides a means to share values like state, functions, or any data across the component tree without passing props down manually at every level. 
+This is particularly useful for global data that many components need to access.
+
+mainly to overcome problem of  prop drilling 
