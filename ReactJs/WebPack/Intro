@@ -15,3 +15,5 @@ This helps reduce the number of HTTP requests needed to load a page.
 
 Webpack has a wide range of plugins that extend its functionality. 
 Plugins can optimize your build process by minifying files, injecting HTML templates, generating manifest files, and more.
+
+end 
