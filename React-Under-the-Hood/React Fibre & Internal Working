@@ -1,6 +1,7 @@
 React Fiber is the reconciliation engine behind React. It was introduced in React 16 to improve how React 
 updates the UI by making it more efficient and performant. 
-Fiber allows React to break rendering work into smaller units and prioritize updates, leading to smoother UI interactions.
+Fiber allows React to break rendering work into smaller units and prioritize updates, 
+leading to smoother UI interactions.
 
 ----------------------------------------------------------------------------
 
