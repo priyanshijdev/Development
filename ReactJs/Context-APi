@@ -13,4 +13,5 @@ Q How Does the Context API Work?
 The Context API provides a means to share values like state, functions, or any data across the component tree without passing props down manually at every level. 
 This is particularly useful for global data that many components need to access.
 
-mainly to overcome problem of  prop drilling 
+mainly to overcome problem of  prop drilling  instead of psssing  props components to comp
+we can direct pass to needed one via context API. 
