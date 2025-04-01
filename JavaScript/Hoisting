@@ -1,0 +1,20 @@
+Hoisting allows JavaScript to move variable and function declarations to the top of their scope before execution.
+
+🔥 How It Works?
+1️⃣ Function declarations are fully hoisted (can be called before they appear in code).
+2️⃣var is hoisted with an undefined value.
+3️⃣let & const are hoisted but remain in the "Temporal Dead Zone" (accessing them before declaration causes an error).
+
+error in let & const -> reference error . 
+
+📌 Example:
+console.log(a); // undefined
+var a = 5;
+
+console.log(b); // ReferenceError
+let b = 10;
+
+foo(); // Works!
+function foo() {
+ console.log("Hoisted!");
+}
