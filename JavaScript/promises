@@ -1,0 +1,44 @@
+Master Promises with me:)
+
+ Promise Basics
+👉 What are the different states of a Promise?
+👉 How do you create and resolve a Promise?
+👉 What happens if a Promise is resolved and rejected at the same time?
+
+Ans1: pending, fulfill, rejected :
+
+A promise is in one of three different states:
+pending - The initial state of a promise.
+fulfilled - The state of a promise representing a successful operation.
+rejected - The state of a promise representing a failed operation.
+
+ANS 2:
+
+using new promise constructor:
+-----------------------------> create
+const myPromise = new Promise<string>((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise resolved successfully!"); // Resolves after 2 seconds
+  }, 2000);
+});
+
+myPromise.then((result) => {
+  console.log(result); // Output: "Promise resolved successfully!"
+});
+
+
+Answer3 :
+
+In JavaScript, a Promise can only be settled once—either resolved or rejected. If you try to both resolve and reject a promise, 
+only the first call (whether resolve or reject) will take effect, and any subsequent calls will be ignored.
+
+const myPromise = new Promise((resolve, reject) => {
+  resolve("Promise resolved!");
+  reject("Promise rejected!"); // This will be ignored
+});
+
+myPromise
+  .then((result) => console.log(result)) // "Promise resolved!"
+  .catch((error) => console.error(error)); // This will NOT execute
+
+
