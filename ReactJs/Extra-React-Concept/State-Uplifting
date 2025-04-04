@@ -1,0 +1,32 @@
+What is State Uplifting in React?
+
+State Uplifting in React is a concept where you move the state from a child component up to its closest common parent component. 
+This is usually done when multiple components need to share or synchronize data.
+
+// Parent Component
+import { useState } from "react";
+import ChildA from "./ChildA";
+import ChildB from "./ChildB";
+
+const Parent = () => {
+  const [count, setCount] = useState(0); // Lifted state
+
+  return (
+    <div>
+      <ChildA count={count} />
+      <ChildB setCount={setCount} />
+    </div>
+  );
+};
+
+
+// ChildA.tsx
+const ChildA = ({ count }: { count: number }) => {
+  return <p>Count is: {count}</p>;
+};
+
+
+// ChildB.tsx
+const ChildB = ({ setCount }: { setCount: (n: number) => void }) => {
+  return <button onClick={() => setCount(prev => prev + 1)}>Increment</button>;
+};
