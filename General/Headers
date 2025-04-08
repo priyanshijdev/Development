@@ -1,0 +1,28 @@
+Headers in REST API Calls:
+
+Headers are additional pieces of information that are sent along with the request to the server. 
+They provide metadata about the request or response, such as the content type of the request body, the authentication token, or the 
+software client making the request. Headers are separate from the request body and are usually used to provide metadata about the request.
+
+Some commonly used headers in REST API calls include:
+
+Accept: Specifies the content type that the client expects to receive in response to the request.
+Content-Type: Specifies the media type of the request body.
+Authorization: Specifies the authentication token or credentials for the request.
+User-Agent: Specifies the software client making the request.
+Cache-Control: Specifies caching behavior for the request and response.
+
+                                                        How to Use Headers in REST API Calls?
+Let's say we're building an e-commerce platform, and we want to create a REST API endpoint for processing orders. 
+The API should allow clients to submit orders, and the server should respond with the status of the order. 
+
+
+Here's an example of what the request might look like, along with the headers that could be included:
+
+POST /api/orders HTTP/1.1
+Host: api.amaxon.com
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Content-Type: application/json
+Accept: application/json
+X-Client-Version: 2.0.1
+User-Agent: AmaxonApp/1.01        
