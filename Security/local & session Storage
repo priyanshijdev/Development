@@ -1,0 +1,9 @@
+                                                                    Local storage :
+
+Data is persistent  where if laptop off or tab/ session tab off,  still data is present there.
+Geting the data from local storage is very easy compared to network call. 
+
+Ex flipkart in application tab we can see the stored data .
+Paytm -> also stored some data in session storage . 
+
+
