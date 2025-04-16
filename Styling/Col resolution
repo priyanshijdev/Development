@@ -1,0 +1,8 @@
+Breakpoint | Prop | Min Width (px) | Max Width (px) | Description
+xs | ≤576 | 0 | 575 | Extra small devices (phones)
+sm | >576 | 576 | 767 | Small devices (landscape phones)
+md | >768 | 768 | 991 | Medium devices (tablets)
+lg | >992 | 992 | 1199 | Large devices (desktops)
+xl | >1200 | 1200 | 1599 | Extra large devices
+xxl | >1600 | 1600 | ∞ (above 1600px) | Extra extra large devices
+
