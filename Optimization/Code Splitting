@@ -31,4 +31,14 @@ const App = () => (
     </Suspense>
   </Router>
 );
+-----------------------------------------------------------------------------------------------------------------
+When you're lazy-loading a component using React.lazy(), you're telling React:
+************************************************************************************************************
+"Hey, this component is a little heavy, so only load it when needed."
 
+But until that component finishes loading, React has to show something — otherwise, the user just sees a blank screen.
+
+What's Happening?
+lazy(() => import('./MyComponent')): tells React to dynamically load that component.
+
+Suspense: wraps the lazy component and shows a fallback UI while it’s loading (like a spinner or skeleton loader
