@@ -1,0 +1,33 @@
+Managing async code and batched state updates:
+
+1.use useEffect():
+
+useEffect(() => {
+  const fetchData = async () => {
+    const response = await fetch("/api/data");
+    const data = await response.json();
+    setData(data);
+  };
+
+  fetchData();
+}, []);
+
+-----------------------------------------------------------------------------------------------------------------------------
+2. handle race condition:
+
+useEffect(() => {
+  let isMounted = true;
+
+  const fetchData = async () => {
+    const res = await fetch("/api/data");
+    const data = await res.json();
+    if (isMounted) setData(data);
+  };
+
+  fetchData();
+
+  return () => {
+    isMounted = false;
+  };
+}, []);
+
