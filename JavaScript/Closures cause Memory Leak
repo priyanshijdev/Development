@@ -1,0 +1,55 @@
+                                                               What Are Closures?
+A closure in programming (especially in JavaScript, Python, etc.) is a function that:
+
+Captures variables from its outer lexical scope, even after the outer function has finished execution.
+
+Maintains access to these variables via an internal reference, not just a copy.
+                                                 How Closures Can Cause Memory Leaks?
+
+Closures can leak memory when:
+
+Unintentionally retained references prevent variables from being garbage collected.
+
+Long-lived closures hold on to large structures that are no longer needed.
+
+They're attached to DOM elements or event handlers that aren’t removed properly
+
+
+example :
+function setup() {
+  const largeData = new Array(1000000).fill('*');
+  document.getElementById("btn").addEventListener("click", function handler() {
+    console.log(largeData[0]);
+  });
+}
+setup();
+
+
+This means:
+
+You have a DOM element (e.g., a button in your HTML).
+
+You added an event listener to that element using a closure that references a variable (e.g., largeData).
+
+Because:
+
+The closure is still active, and
+
+The element is still in the DOM,
+the browser can't clean up (garbage collect) the closure or its variables.
+
+So even though you're not actively using largeData, the memory it consumes stays occupied.
+
+
+		                                                      	Why this causes a memory leak?
+largeData might be a huge array or object (like 1 million items).
+
+The function that references it is attached to the DOM element via an event listener.
+
+Since the browser sees that the function might be called (e.g., on click), it keeps everything alive.
+
+Nothing is freed until:
+
+You remove the event listener, or
+
+The DOM element is removed.
