@@ -1,0 +1,24 @@
+const objects = [
+  { "name": "Alice", "age": 34 },
+  { "name": "Bob", "age": 28 },
+  { "name": "Eve", "age": 45 },
+  { "name": "Charlie", "age": 22 },
+  { "name": "David", "age": 30 }
+];
+task to find sum of ages:
+
+
+const totalAge = objects.reduce((sum, person) => sum + person.age, 0);
+
+console.log("Total Age:", totalAge); // Output: 159
+
+--------------------------------------------------------------------------------------------------------------------------
+Or just use foreach loop "
+
+
+let totalAge = 0;
+
+objects.forEach(person => {
+  totalAge += person.age;
+});
+
