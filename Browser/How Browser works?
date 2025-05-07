@@ -1,0 +1,33 @@
+A browser (like Chrome, Firefox, Safari, or Edge) is a software application that retrieves, 
+interprets, and displays content from the web, usually written in HTML, CSS, and JavaScript. 
+  Here's a simplified overview of how it works:
+
+### 1. **User Requests a Web Page**
+
+You type a URL into the address bar or click a link. This sends an **HTTP(S) request** to the appropriate web server.
+
+### 2. **DNS Lookup**
+
+The browser asks a **DNS (Domain Name System)** server to translate the domain name (like `openai.com`) 
+  into an IP address so it knows where to send the request.
+
+### 3. **Connecting to the Server**
+
+Using the IP address, the browser establishes a **TCP connection** (usually over HTTPS for security) with the server.
+
+### 4. **Server Sends Back Content**
+
+The server responds with **HTML, CSS, JavaScript**, and other resources like images, fonts, and videos.
+
+### 5. **Rendering the Page**
+
+The browser processes everything in several steps:
+
+* **HTML Parsing**: Turns HTML into a **DOM tree** (Document Object Model).
+* **CSS Parsing**: Builds a **CSSOM tree** (CSS Object Model).
+* **JavaScript Execution**: Runs any JavaScript using the browser's engine (e.g., V8 in Chrome). -> Hydration 
+* **Render Tree Creation**: Combines DOM and CSSOM to form a render tree.
+* **Layout**: Calculates the position and size of each element.
+* **Painting**: Fills in pixels on the screen.
+* **Compositing**: Layers everything together and displays the final result.
+
