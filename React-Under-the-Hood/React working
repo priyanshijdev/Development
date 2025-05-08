@@ -1,0 +1,17 @@
+Document Object Model (DOM)
+The DOM, or Document Object Model, is a representation of the HTML structure that allows JavaScript to interact with and manipulate the elements on a webpage. Each HTML element is a node in the DOM tree
+Web browsers utilize the DOM tree to represent and manipulate HTML documents, which enables easy identification and positioning of elements within the browser’s display.
+
+However, modifying or making changes to DOM elements is a resource intensive and time-consuming process. 
+When a DOM element is altered, the browser has to recalculate the element’s size and position, as well as repaint the screen.
+
+
+Virtual DOM
+The Virtual DOM is a JavaScript object representation of the actual DOM. 
+Consider the HTML code snippet above, and below is the corresponding JavaScript object representation.
+
+React generates the javascript object of the HTML to be precise JSX (which is nothing but a syntactic sugar to the HTML) with the help of React.createElement.
+
+Updating a virtual DOM is much faster and efficient than the actual DOM, as updating a virtual DOM does not require 
+heavy web browser processing like painting and recalibrating the space. 
+It involves updating the JavaScript object directly.
