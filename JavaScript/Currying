@@ -35,7 +35,8 @@ Infinite currying allows you to call a function an unlimited number of times,
 the final result is computed when a specific condition is met (like an empty call or using a value).
 
 How Does Infinite Currying Work?
-Infinite currying leverages closures and function overloading in JavaScript. Here's a basic example:
+Infinite currying leverages closures and function overloading in JavaScript. 
+Here's a basic example:
 
 function add(a) {
   return function(b) {
