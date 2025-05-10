@@ -1,0 +1,14 @@
+Shallow Vs Deep Copy --------
+
+When we copy any object then it's memory location is copied.
+example:
+If my address is a=1008 
+then if I assign 
+a=b
+then b's address is also same.
+
+To overcome the above situation Shallow & Deep Copy was invented:
+
+Shallow Copy:
+
+
