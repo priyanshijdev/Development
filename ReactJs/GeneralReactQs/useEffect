@@ -1,0 +1,17 @@
+What happens if you call setState inside a useEffect without dependencies?
+
+Calling setState inside a useEffect without dependencies (useEffect(() => { ... })) will cause the useEffect to run after every render, 
+including the re-renders caused by the setState itself. This creates an infinite render loop.
+
+-> infinite loop :
+
+function InfiniteLoopExample() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(count + 1);
+  }); //  No dependency array
+
+  return <div>{count}</div>;
+}
+
