@@ -1,0 +1,98 @@
+What happens when you type a URL into the browser?
+
+Answer -: 
+
+When you type a URL into the browser and press Enter, a lot happens behind the scenes. Here's a step-by-step breakdown of the entire process:
+
+### **1. URL Parsing**
+
+The browser breaks down the URL into different components:
+
+* **Protocol:** e.g., `https`
+* **Domain:** e.g., `www.example.com`
+* **Path:** e.g., `/about`
+* **Query Params (optional):** e.g., `?id=123`
+* **Fragment (optional):** e.g., `#section1`
+
+### **2. Check Browser Cache**
+
+Before making a request, the browser checks if the requested resource is already cached locally:
+
+* If yes and valid, it uses the cached version (skip many steps below).
+* If not, it proceeds with a network request.
+
+### **3. DNS Resolution**
+
+The browser needs to convert the domain name (e.g., `www.example.com`) to an IP address:
+
+* It checks the **OS cache**, **browser cache**, **router**, or **ISP's DNS server**.
+* Ultimately, a **DNS query** is made if the address is not cached.
+* The result: e.g., `93.184.216.34`
+
+
+### **4. TCP Connection (3-Way Handshake)**
+
+A TCP connection is established with the server:
+
+* SYN
+* SYN-ACK
+* ACK
+
+For HTTPS, this is followed by:
+
+
+### **5. TLS Handshake (for HTTPS)**
+
+* The client and server exchange certificates.
+* They establish a secure encrypted channel using symmetric encryption keys.
+
+
+### **6. HTTP Request Sent**
+
+The browser sends an HTTP(S) request:
+
+```
+GET /about HTTP/1.1
+Host: www.example.com
+User-Agent: Chrome/...
+```
+
+### **7. Server Processing**
+
+The server:
+
+* Receives the request
+* Processes it (may include database queries, logic, etc.)
+* Sends back an HTTP response:
+
+```
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<html>...</html>
+
+### **8. Browser Receives Response**
+
+* If the response is HTML, the browser starts parsing the HTML.
+* It then issues **additional requests** for assets like CSS, JS, images, fonts, etc.
+
+---
+
+### **9. Rendering the Page**
+
+The browser:
+
+* Builds the **DOM (Document Object Model)** from HTML.
+* Builds the **CSSOM (CSS Object Model)** from stylesheets.
+* Combines them into the **Render Tree**.
+* Runs **JavaScript** (can manipulate DOM).
+* Computes layout and paints pixels on the screen.
+
+---
+
+### **10. Interactive Page Ready**
+
+The page becomes interactive after:
+
+* All JavaScript loads and runs.
+* The DOM is fully built and event listeners are attached.
