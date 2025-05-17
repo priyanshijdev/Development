@@ -18,3 +18,12 @@ foo(); // Works!
 function foo() {
  console.log("Hoisted!");
 }
+
+----------------------------------------------------------------------------------------------------
+
+| Type                 | Hoisted?  | Initialized?      | Notes                              |
+| -------------------- | --------- | ----------------- | ---------------------------------- |
+| `var`                | Yes       | Yes (`undefined`) | Can be accessed before declaration |
+| `let` / `const`      | Yes       | ❌ No              | TDZ exists until declaration line  |
+| Function declaration | Yes       | Yes               | Safe to call before definition     |
+| Function expression  | Partially | ❌ No              | Variable is hoisted, value is not  |
