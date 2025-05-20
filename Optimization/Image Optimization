@@ -1,0 +1,17 @@
+What’s your approach to optimizing components and images?
+
+1. Use Correct Image Formats
+Use modern formats like WebP, AVIF for better compression.
+
+Use SVGs for icons and simple graphics.
+
+2. Lazy Load Images
+Use loading="lazy" for <img> tags or libraries like react-lazyload.
+
+<img src="example.webp" loading="lazy" alt="example" />
+
+3. Image CDN
+Use an image CDN (e.g., Cloudinary, Imgix) to serve optimized, resized images.
+
+4. Compress Images
+Compress images before uploading using tools like TinyPNG or Squoosh.
