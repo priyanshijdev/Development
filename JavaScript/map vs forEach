@@ -1,0 +1,38 @@
+
+
+const students = [
+  {
+    name: "Aarav Mehta",
+    rollNumber: "101",
+    marks: 85,
+  },
+  {
+    name: "Priya Sharma",
+    rollNumber: "102",
+    marks: 92,
+  },
+  {
+    name: "Rohan Verma",
+    rollNumber: "103",
+    marks: 78,
+  },
+  {
+    name: "Sneha Kapoor",
+    rollNumber: "104",
+    marks: 88,
+  },
+  {
+    name: "Kabir Singh",
+    rollNumber: "105",
+    marks: 67,
+  },
+];
+// normal priting of names
+// students.forEach((i) => {
+//   console.log("name are", i.name);
+// });
+// now in capital letters:will use map
+
+ students.map((i) => {
+  console.log("name are", i.name.toUpperCase());
+});
