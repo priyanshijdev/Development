@@ -36,3 +36,20 @@ const students = [
  students.map((i) => {
   console.log("name are", i.name.toUpperCase());
 });
+
+Question 2:  To return details of those who scored > 60 :
+
+
+
+// students.map((i) => {
+//   if (i.marks > 60) {
+//     console.log("name are", i.name.toUpperCase());
+//   }
+// });
+
+// using filter:
+
+const all = students.filter((i) => i.marks > 55);
+
+console.log("name are", all);
+
