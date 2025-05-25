@@ -1,0 +1,41 @@
+                                                                  Variable Shadowing: 
+Imagine that you created two variables with exactly the same name but different values. 
+The difference us that they are located in different scopes. One of them is located in the global scope while the other is in the function.
+
+let a=10;
+
+function scope() {
+ let a=12;
+ console.log(a);
+}
+
+scope();
+
+ console.log(a);
+ 
+ o/p: 
+ 12
+ 10
+ 
+ 		                                                                    WHY???
+ When we declare a variable in the function scope while having a variable with the exact same name in the outer scope 
+ (global scope in this case), the value assigned in the inner scope is the value that will be stored in the memory. 
+ The inner scope usually is supposed to have access to the outer scope however when we declare variables with the same name, things change.
+
+This is called shadowing or variable shadowing in JavaScript. The inner scope variable shadowed the outer scope variable.
+  But why is the result value 10 in the second console log?
+
+Because the variable will be gone from the memory when the function ends and it doesn’t go outside of it. 
+This happens due to the scope hierarchy in JavaScript. 
+The priority of scopes goes from inner-most to outer-most scope. 
+In other words, the inner scope has more priority than the outer scope. 
+That is why, the variables inside the function are prioritized and then when the function ends, they are gone from the memory.
+
+
+
+
+
+
+
+
+ 
