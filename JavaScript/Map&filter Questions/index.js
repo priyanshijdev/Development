@@ -9,18 +9,17 @@ const updated= users.map((ele)=>{
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Filter users by age greater than 25
-   
-const updated2= users.map((ele)=>{
- if( ele.age>25)
-  {return ele }
- else 
- {
-  return ""
- }
- })
 
-//  console.log('users-----', updated2)
-// Get all unique cities from an array of user objects
+const users = [
+  { name: "A", age: 21 },
+  { name: "B", age: 28 },
+];
+const updated = users.filter((ele) => ele.age > 25);
+// Output: [{ name: 'B', age: 28 }]
+
+console.log("updated= ", updated);
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
 const user = [
   { name: 'A', city: 'Delhi' },
