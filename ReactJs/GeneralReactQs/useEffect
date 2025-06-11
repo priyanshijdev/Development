@@ -15,3 +15,6 @@ function InfiniteLoopExample() {
   return <div>{count}</div>;
 }
 
+                                                                    Real World Analogy:
+If you turn on a fan in a room (useEffect), you should turn it off (cleanup) when you leave the room (component unmounts) or 
+change rooms (dependencies change).
