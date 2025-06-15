@@ -1,9 +1,12 @@
 boxModel in css:
-The CSS Box Model is a fundamental concept in web design and layout, describing how every element on a web page is represented as a rectangular box. It consists of the following components, starting from the innermost content to the outermost layer:
+The CSS Box Model is a fundamental concept in web design and layout,
+describing how every element on a web page is represented as a rectangular box.
+It consists of the following components, starting from the innermost content to the outermost layer:
 
 1. Content
 This is the innermost part of the box where the text, images, or other content of the element is displayed.
 It defines the width and height of the element.
+
 2. Padding
 The padding is the space between the content and the border of the element.
 It provides breathing room around the content and is fully transparent.
