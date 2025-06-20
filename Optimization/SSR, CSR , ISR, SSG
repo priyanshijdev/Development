@@ -1,0 +1,48 @@
+1.  SSR- Server Side Rendering
+
+=> The HTML is generated on the server for each request.
+
+=> Page is rendered on the server every time a request is made.
+
+=> Good for SEO and when content is dynamic.
+
+=> Slower than SSG for repeat views but ensures up-to-date data.
+
+Example use case: News sites, user-specific dashboards.
+
+
+
+2  CSR (Client-Side Rendering)
+ The HTML is minimal and JavaScript takes over rendering on the client (browser) after page load.
+
+KEY POINTS: 
+Fast initial response but longer time to interactive.
+
+Not ideal for SEO unless used with hydration/static content.
+
+Good for user-specific or highly interactive apps.
+
+Example use case: Internal tools, admin panels.
+
+
+
+3.ISR (Incremental Static Regeneration)
+
+A hybrid of SSG and SSR. Pages are pre-rendered statically, but can be updated in the background on a schedule.
+
+Gives the speed of SSG with near real-time updates.
+
+Great for sites with frequent updates that don’t require real-time rendering.
+
+Example use case: Blogs, e-commerce product pages.
+
+
+
+4. SSG (Static Site Generation)
+What it means: Pages are rendered at build time and served as static HTML.
+
+Super fast.
+
+Not suitable for real-time or user-specific content unless combined with CSR.
+
+Example use case: Marketing pages, documentation, portfolios.
