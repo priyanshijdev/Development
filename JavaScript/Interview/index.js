@@ -120,3 +120,21 @@ const locationGroups = userUpdated.reduce((acc, user) => {
 }, {});
 
 console.log("-----", locationGroups);
+
+
+
+// Generate inactiveUserFriends:
+// For every user whose profile.active is false in the original users array, find all their friends by id and include their details 
+const inactiveUserFriends = [];
+
+users.forEach((user) => {
+  if (!user.profile.active) {
+    user.friends.forEach((friendId) => {
+      const friend = users.find((u) => u.id === friendId);
+      if (friend) {
+        inactiveUserFriends.push(friend);
+      }
+    });
+  }
+});
+
