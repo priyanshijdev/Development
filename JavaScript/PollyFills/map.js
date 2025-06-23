@@ -1,5 +1,13 @@
 
+// With using map:
+    const numbers = [1, 2, 3];
+    const doubledNumbers = numbers.map(number => number * 2);
+
+    console.log(doubledNumbers); // Output: [2, 4, 6]
+    console.log(numbers);       // Output: [1, 2, 3] (original array unchanged)
+
 /// custom map function / polyfill of Map :
+
 
 Array.prototype.myMap = function (cb) {
   const temp = [];
