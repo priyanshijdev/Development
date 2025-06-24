@@ -1,0 +1,101 @@
+In JavaScript, a **Promise** represents the eventual completion (or failure) of an asynchronous operation and its resulting value. 
+While there's only **one Promise object type**, Promises can exist in **different states** or be used in various **patterns** depending on the context.
+
+Here’s a breakdown of the **types/states of Promises** and **common patterns** of their use:
+
+---
+
+### 🔹 **States of a Promise**
+
+There are **three main states**:
+
+1. **Pending**
+
+   * Initial state; neither fulfilled nor rejected.
+   * Example: A network request has been made but no response yet.
+
+2. **Fulfilled (Resolved)**
+
+   * The operation completed successfully.
+   * The promise returns a value via `.then()`.
+
+3. **Rejected**
+
+   * The operation failed.
+   * The promise returns an error via `.catch()`.
+
+```js
+const promise = new Promise((resolve, reject) => {
+  // async operation
+  if (success) resolve("Data loaded");
+  else reject("Error occurred");
+});
+
+
+### 🔹 **Types of Promise Patterns**
+
+#### 1. **Chained Promises**
+
+Used when multiple async tasks need to run in sequence.
+
+```js
+fetchData()
+  .then(processData)
+  .then(saveData)
+  .catch(error => console.error(error));
+```
+
+#### 2. **Promise.all()**
+
+Runs multiple promises in parallel and waits for all of them to complete.
+
+```js
+Promise.all([promise1, promise2])
+  .then(results => console.log(results))
+  .catch(error => console.error(error));
+```
+
+#### 3. **Promise.race()**
+
+Returns the result of the first promise that settles (either resolved or rejected).
+
+```js
+Promise.race([promise1, promise2])
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+```
+
+#### 4. **Promise.any()** (ES2021+)
+
+Returns the first fulfilled promise (ignores rejected ones). If all fail, it rejects.
+
+```js
+Promise.any([promise1, promise2])
+  .then(result => console.log(result))
+  .catch(error => console.error(error));
+```
+
+#### 5. **Promise.allSettled()**
+
+Waits for all promises to settle (regardless of success/failure), then returns the results.
+
+```js
+Promise.allSettled([promise1, promise2])
+  .then(results => console.log(results));
+```
+
+---
+
+### Summary
+
+| Type / State             | Description                                 |
+| ------------------------ | ------------------------------------------- |
+| **Pending**              | Not yet fulfilled or rejected               |
+| **Fulfilled**            | Operation completed successfully            |
+| **Rejected**             | Operation failed                            |
+| **Chained Promises**     | Sequential async operations                 |
+| **Promise.all()**        | Waits for all promises to resolve or reject |
+| **Promise.race()**       | Settles as soon as one promise does         |
+| **Promise.any()**        | Resolves with the first successful promise  |
+| **Promise.allSettled()** | Returns results of all settled promises     |
+
