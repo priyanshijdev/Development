@@ -29,12 +29,12 @@ USE CASE :
 2 memoization & caching 
 
 
-Infinite Currying in JavaScript
+                                      Infinite Currying in JavaScript
 
 Infinite currying allows you to call a function an unlimited number of times, 
 the final result is computed when a specific condition is met (like an empty call or using a value).
 
-How Does Infinite Currying Work?
+                                  How Does Infinite Currying Work?
 Infinite currying leverages closures and function overloading in JavaScript. 
 Here's a basic example:
 
@@ -50,3 +50,9 @@ function add(a) {
 console.log(add(1)(2)(3)()); // Output: 6
 console.log(add(5)(10)(-2)(7)()); // Output: 20
 
+
+****IMP NOTE****:
+
+  console.log(add(5)(10)(-2)(7)); ---> Infinte currying
+This will not give output yes!! curried only works with 3 argm 
+after that U have pass empty () paranthese for output.
