@@ -19,3 +19,8 @@ so whenever client reqst to server it will give uid: 003
                 /\
               Checks for cookie value or uid, 
               if valid then calls next() else  REJECT  
+--------------------------------------------------------------------------------------------------
+
+Authentication verifies "Who you are." Authorization determines "What you can do."
+ Authentication establishes identity, while authorization specifies the actions or resources a user or entity is allowed to access or perform.
+
