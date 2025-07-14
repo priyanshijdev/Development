@@ -66,3 +66,34 @@ object
 122
 ""
 
+------------------------------------------------------------------------------------------
+
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+});
+
+['C', 'D'].forEach((x) =>
+  console.log(x)
+);
+
+console.log("E");
+
+
+Output:
+A
+C
+D
+E
+B
+
+WHY????
+
+console.log(): Executes immediately — synchronous.
+
+setTimeout(): Schedules a function to run asynchronously — after the current call stack is cleared.
+
+If no delay is given (like here), the default is 0ms, but it's still deferred to the task queue.
+
+forEach(): Also synchronous — executes immediately.
