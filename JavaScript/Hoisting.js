@@ -27,3 +27,25 @@ function foo() {
 | `let` / `const`      | Yes       | ❌ No              | TDZ exists until declaration line  |
 | Function declaration | Yes       | Yes               | Safe to call before definition     |
 | Function expression  | Partially | ❌ No              | Variable is hoisted, value is not  |
+
+ex:
+
+console.log(myVariable); // Output: undefined (because var is hoisted and initialized to undefined)
+var myVariable = "Hello";
+console.log(myVariable); // Output: Hello
+
+console.log(anotherVariable); // Output: ReferenceError: Cannot access 'anotherVariable' before initialization (because let is hoisted but not initialized until the declaration line)
+let anotherVariable = "World";
+console.log(anotherVariable); // Output: World
+ 
+#IMPORTANT
+ 
+sayHello(); // Output: Hello (because function declarations are hoisted)
+function sayHello() {
+  console.log("Hello");
+}
+
+//sayGoodbye(); // Output: ReferenceError: sayGoodbye is not defined (because function expressions are not hoisted)
+const sayGoodbye = function() {
+  console.log("Goodbye");
+};
