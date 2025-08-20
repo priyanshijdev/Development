@@ -40,9 +40,7 @@ Example use case: Blogs, e-commerce product pages.
 
 4. SSG (Static Site Generation)
 What it means: Pages are rendered at build time and served as static HTML.
-
 Super fast.
-
 Not suitable for real-time or user-specific content unless combined with CSR.
 
 Example use case: Marketing pages, documentation, portfolios.
