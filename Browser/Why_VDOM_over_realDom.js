@@ -4,8 +4,6 @@
 
 “What does ‘lightweight copy’ mean, exactly—and why is it not expensive on the virtual DOM?”
 
-At that moment, the candidate paused. The conversation stalled. 
-
 Let’s break it down and clarify what this really means!
 
   🔸 The Real DOM:
