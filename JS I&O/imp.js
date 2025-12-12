@@ -42,3 +42,40 @@ setTimeout callback → (macrotask)
 | Microtasks  | `Promise resolved`      |
 |             | `Async/await result`    |
 | Macrotasks  | `setTimeout callback`   |
+  -----------------------------------------------------------------------------------------------------------------------------
+
+  console.log('first');
+
+setTimeout(function() {
+  console.log('timeout');
+}, 0);
+
+Promise.resolve()
+  .then(function() {
+    console.log('promise1');
+  })
+  .then(function() {
+    console.log('promise2');
+  });
+
+console.log('end'); 
+
+
+o/p: first
+end
+promise1
+promise2
+timeout
+
+
+Step-by-step Execution
+Synchronous logs
+first
+end
+
+Promise .then() callbacks (microtasks)
+promise1
+promise2
+
+Timeout (macrotask)
+timeout
